@@ -1,0 +1,157 @@
+/* ກຳນົດຄ່າພື້ນຖານໃຫ້ທຸກອົງປະກອບ */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* ຈັດຮູບແບບພື້ນຫຼັງ ແລະຈັດເນື້ອຫາໃຫ້ຢູ່ກາງໜ້າ */
+body {
+   font-family: 'Noto Sans Lao', Arial, sans-serif;
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;   
+}
+
+/* ກ່ອງຫຼັກທີ່ບັນຈຸລາຍການວຽກ */
+.container {
+   background: white;
+   border-radius: 15px;
+   padding: 30px;
+   width: 100%;
+   max-width: 500px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ຈັດຮູບແບບຫົວຂໍ້ */
+h1 {
+   color: #333;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+/* ຈັດຊ່ອງປ້ອນຂໍ້ຄວາມ ແລະປຸ່ມເພີ່ມໃຫ້ຢູ່ແຖວດຽວກັນ */
+.input-container {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+/* ຈັດຮູບແບບຊ່ອງພິມວຽກ */
+#taskInput {
+   flex: 1;
+   padding: 12px;
+   border: 2px solid #ddd;
+   border-radius: 8px;
+   font-size: 16px;
+}
+
+/* ປ່ຽນສີຂອບຊ່ອງພິມເມື່ອກົດເລືອກ */
+#taskInput:focus {
+   outline: none;
+   border-color: #667eea;
+}
+
+/* ຈັດຮູບແບບປຸ່ມເພີ່ມວຽກ */
+#addBtn {
+   padding: 12px 24px;
+   background: #667eea;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background 0.3s;
+}
+
+/* ປ່ຽນສີປຸ່ມເມື່ອເອົາເມົາສ໌ໄປຊີ້ */
+#addBtn:hover {
+   background: #5568d3;
+}
+
+/* ເອົາຈຸດນຳໜ້າລາຍການອອກ */
+#taskList {
+   list-style: none;
+}
+
+/* ຈັດແຖວ ແລະຮູບແບບຂອງວຽກແຕ່ລະລາຍການ */
+.task-item {
+   background: #f8f9fa;
+   padding: 15px;
+   margin-bottom: 10px;
+   border-radius: 8px;
+   display: flex;
+   gap: 8px;
+   justify-content: space-between;
+   align-items: center;
+   transition: transform 0.2s;
+}
+
+/* ເລື່ອນລາຍການເລັກນ້ອຍເມື່ອເອົາເມົາສ໌ໄປຊີ້ */
+.task-item:hover {
+   transform: translateX(5px);
+}
+
+/* ຮູບແບບວຽກທີ່ເຮັດສຳເລັດ */
+.task-item.completed {
+   opacity: 0.6;
+   text-decoration: line-through;
+}
+
+/* ຈັດໃຫ້ຂໍ້ຄວາມວຽກໃຊ້ພື້ນທີ່ວ່າງ */
+.task-text {
+   flex: 1;
+   cursor: pointer;
+}
+
+/* ຈັດຮູບແບບປຸ່ມແກ້ໄຂ */
+.edit-btn {
+   background: linear-gradient(135deg, #f6b93b, #e58e26);
+   color: white;
+   border: none;
+   padding: 8px;
+   border-radius: 7px;
+   cursor: pointer;
+   font: inherit;
+   font-size: 14px;
+   font-weight: 600;
+   box-shadow: 0 3px 8px rgba(229, 142, 38, 0.25);
+   transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+/* ເພີ່ມເອັບເຟັກເມື່ອຊີ້ເທິງປຸ່ມແກ້ໄຂ */
+.edit-btn:hover {
+   filter: brightness(1.05);
+   transform: translateY(-2px);
+   box-shadow: 0 5px 12px rgba(229, 142, 38, 0.35);
+}
+
+/* ເອັບເຟັກເວລາກົດປຸ່ມແກ້ໄຂ */
+.edit-btn:active {
+   transform: translateY(0);
+}
+
+/* ສະແດງຂອບຊັດເຈນເມື່ອເລືອກປຸ່ມດ້ວຍແປ້ນພິມ */
+.edit-btn:focus-visible {
+   outline: 2px solid rgba(229, 142, 38, 0.4);
+   outline-offset: 2px;
+}
+
+/* ຈັດຮູບແບບປຸ່ມລຶບ */
+.delete-btn {
+   background: #e74c3c;
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+/* ປ່ຽນສີປຸ່ມລຶບເມື່ອເອົາເມົາສ໌ໄປຊີ້ */
+.delete-btn:hover {
+   background: #c0392b;
+}
